@@ -27,6 +27,14 @@ body {
   min-height: 100vh;
   line-height: 1.6;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.6rem;
 }
 
 form {
@@ -35,14 +43,17 @@ form {
 
 div > label {
   display: block;
+  padding-bottom: 5px;
 }
 
 input,
-select {
+select,
+button {
   color-scheme: dark;
   border-width: 1px;
   font-size: 1.6rem;
   padding: 3px;
+  border-radius: 3px;
 }
 
 input[type='text'],
@@ -54,7 +65,6 @@ select {
   border: 2px solid var(--secondary-hover);
   background-color: var(--secondary-background);
   box-sizing: border-box;
-  border-radius: 3px;
 }
 
 input:valid {
@@ -69,4 +79,16 @@ input:invalid {
 
 input:focus:invalid {
   outline: none;
+}
+
+button {
+  background-color: var(--secondary-background);
+  border-style: solid;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.form-item {
+  padding-bottom: 10px;
+  text-align: left;
 }

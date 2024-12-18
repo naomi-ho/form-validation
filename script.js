@@ -93,3 +93,12 @@ confirmPassword.addEventListener('input', (e) => {
     confirmPassword.setCustomValidity('Passwords do not match.');
   }
 });
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  if (!form.checkValidity()) {
+    form.reportValidity();
+  } else {
+    alert('High Five');
+  }
+});
