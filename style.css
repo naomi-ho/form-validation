@@ -48,6 +48,7 @@ select {
 input[type='text'],
 input[type='email'],
 input[type='number'],
+input[type='password'],
 select {
   width: 100%;
   border: 2px solid var(--secondary-hover);

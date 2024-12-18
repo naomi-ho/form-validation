@@ -2,6 +2,7 @@ const form = document.querySelector('form');
 const email = document.getElementById('email');
 const country = document.getElementById('country');
 const code = document.getElementById('code');
+const password = document.getElementById('password');
 
 function validEmail(email) {
   const ePattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -54,5 +55,28 @@ code.addEventListener('input', (e) => {
     code.setCustomValidity('');
   } else {
     code.setCustomValidity('Please enter a valid postal/zip code.');
+  }
+});
+
+function validPassword(password) {
+  const lowerCaseLetters = /[a-z]/g;
+  const upperCaseLetters = /[A-Z]/g;
+  const numbers = /[0-9]/g;
+
+  return (
+    lowerCaseLetters.test(password) &&
+    upperCaseLetters.test(password) &&
+    numbers.test(password) &&
+    password.length >= 8
+  );
+}
+
+password.addEventListener('input', (e) => {
+  if (validPassword(password.value)) {
+    password.setCustomValidity('');
+  } else {
+    password.setCustomValidity(
+      'Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.',
+    );
   }
 });
