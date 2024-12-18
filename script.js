@@ -3,6 +3,7 @@ const email = document.getElementById('email');
 const country = document.getElementById('country');
 const code = document.getElementById('code');
 const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirmPassword');
 
 function validEmail(email) {
   const ePattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -78,5 +79,17 @@ password.addEventListener('input', (e) => {
     password.setCustomValidity(
       'Password must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters.',
     );
+  }
+});
+
+function passwordConfirmation(password, confirmPassword) {
+  return confirmPassword !== '' && confirmPassword === password;
+}
+
+confirmPassword.addEventListener('input', (e) => {
+  if (passwordConfirmation(password.value, confirmPassword.value)) {
+    confirmPassword.setCustomValidity('');
+  } else {
+    confirmPassword.setCustomValidity('Passwords do not match.');
   }
 });
