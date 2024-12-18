@@ -12,12 +12,12 @@
     <form action="" novalidate>
       <div>
         <label for="email">Email: </label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" required />
       </div>
       <div>
         <label for="country">Country: </label>
-        <select id="country" name="country">
-          <option value="" disabled></option>
+        <select id="country" name="country" required>
+          <option style="display: none">Select One</option>
           <option value="AF">Afghanistan</option>
           <option value="AX">Åland Islands</option>
           <option value="AL">Albania</option>
@@ -276,11 +276,11 @@
       </div>
       <div>
         <label for="code">Postal Code/Zip Code: </label>
-        <input type="text" name="code" id="code" />
+        <input type="text" name="code" id="code" required />
       </div>
       <div>
         <label for="password">Password: </label>
-        <input type="text" name="password" id="password" />
+        <input type="text" name="password" id="password" required />
       </div>
       <div>
         <label for="password-confirmation">Confirm Password: </label>
@@ -288,6 +288,7 @@
           type="text"
           name="password-confirmation"
           id="password-confirmation"
+          required
         />
       </div>
       <button>Submit</button>

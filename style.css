@@ -1,7 +1,71 @@
+:root {
+  --contents-background: #1e1e1e;
+  --secondary-background: #2d2d2d;
+  --secondary-hover: #3b3b3b;
+  --font-color: white;
+  --font-secondary-color: #cacaca;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  background-color: var(--contents-background);
+  font-family: 'Inter', sans-serif;
+  color: var(--font-color);
+  min-height: 100vh;
+  line-height: 1.6;
+  margin: 10px;
+}
+
+form {
+  max-width: 320px;
+}
+
+div > label {
+  display: block;
+}
+
+input,
+select {
+  color-scheme: dark;
+  border-width: 1px;
+  font-size: 1.6rem;
+  padding: 3px;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='number'],
+select {
+  width: 100%;
+  border: 2px solid var(--secondary-hover);
+  background-color: var(--secondary-background);
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
 input:valid {
-  border: 1px solid black;
+  border-color: var(--secondary-hover);
+  background-color: var(--secondary-background);
 }
 
 input:invalid {
-  border: 1px dashed red;
+  border-color: #900;
+  background-color: rgb(104, 0, 0);
+}
+
+input:focus:invalid {
+  outline: none;
 }
